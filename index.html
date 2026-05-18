@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Clock</title>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&family=Poppins:wght@100;200;300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -30,7 +30,7 @@
 
     .widget {
       background: var(--surface);
-      border: 0px solid var(--border);
+      border: none;
       border-radius: var(--radius);
       width: 100%;
       padding: 22px 24px 20px;
@@ -72,25 +72,28 @@
 
     /* Time */
     .time {
-      font-family: 'DM sans', sans-serif;
-      font-size: 70px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 75px;
       font-weight: 500;
       color: var(--ink);
       letter-spacing: 0.015em;
       line-height: 1;
       text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .time .colon {
       display: inline-block;
       animation: blink 1s step-start infinite;
       color: var(--accent);
-      font-size: 55px;
-      vertical-align: middle;
+      font-size: 52px;
+      margin: 0 2px;
+      font-weight: 300;
+      line-height: 1;
       position: relative;
-      top: -6px;
-      margin: 0 1px;
-      font-weight: 200;
+      top: -5px;
     }
 
     @keyframes blink {
@@ -113,7 +116,7 @@
   </div>
 
   <script>
-    const DAYS   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const DAYS   = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
     const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
     function pad(n) { return String(n).padStart(2, '0'); }
